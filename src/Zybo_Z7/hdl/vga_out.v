@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module vga_out(
-	input clk,
-	output [7:0] pmod_a, pmod_b
+	input sysclk,
+	output [7:0] jc, jd
     );
 
     wire pclk;
@@ -11,18 +11,18 @@ module vga_out(
 	reg	[11:0]  vga_out;
 	reg vga_hs, vga_vs;	
 	
-	assign pmod_b[3:0] = vga_out[11:8];
-	assign pmod_a[3:0] = vga_out[7:4];
-	assign pmod_b[7:4] = vga_out[3:0];
-	assign pmod_a[4] = vga_hs;
-	assign pmod_a[5] = vga_vs;
+	assign jc[3:0] = vga_out[11:8];
+	assign jd[3:0] = vga_out[7:4];
+	assign jc[7:4] = vga_out[3:0];
+	assign jd[4] = vga_hs;
+	assign jd[5] = vga_vs;
 
     clk_wiz_0 clk_wiz_0_inst
     (
         // Clock out ports
         .clk_out1(pclk),     // output clk_out1
         // Clock in ports
-        .clk_in1(clk));      // input clk_in1
+        .clk_in1(sysclk));      // input clk_in1
         
 	always@(posedge pclk)
 	begin
