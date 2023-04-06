@@ -50,7 +50,7 @@ void DemoInitialize() {
    xil_printf("Connected to PmodTMP2 Demo over UART\n\r");
 
    TMP2_begin(&myDevice, XPAR_AXI_IIC_0_BASEADDR, TMP2_ADDR);
-   xil_printf("Connected to PmodTMP2 over IIC on JB\n\r\n\r");
+   xil_printf("Connected to PmodTMP2 over IIC\n\r\n\r");
 }
 
 void DemoRun() {
