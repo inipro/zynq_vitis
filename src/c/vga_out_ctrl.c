@@ -7,11 +7,11 @@
 
 #include "xparameters.h"
 #include "xgpiops.h"
-#include "vga_out.h"
+#include "myip.h"
 
 int main (void)
 {
-	u32 VGA_OUT_BaseAddress = XPAR_VGA_OUT_0_S00_AXI_BASEADDR;
+	u32 MYIP_BaseAddress = XPAR_MYIP_0_S00_AXI_BASEADDR;
 	u32 wreg = 0;
 	int8_t read_char = 0;
 	int16_t hc ,vc = 0;
@@ -54,6 +54,6 @@ int main (void)
 		wreg = wreg + hc;
 
 		xil_printf("Write: %x\r\n", wreg);
-		VGA_OUT_mWriteReg(VGA_OUT_BaseAddress, 0, wreg);
+		MYIP_mWriteReg(MYIP_BaseAddress, 0, wreg);
 	}
 }

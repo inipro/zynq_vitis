@@ -3,7 +3,7 @@
 module vga_out_ctrl(
 	input pclk,
 	input [31:0] center,
-	output [7:0] pmod_a, pmod_b
+	output [7:0] jd, jc
     );
 
 	reg [25:0] cnt;
@@ -12,11 +12,11 @@ module vga_out_ctrl(
 	reg	[11:0]  vga_out;
 	reg        vga_hs, vga_vs;	
 	
-	assign pmod_b[3:0] = vga_out[11:8];
-	assign pmod_a[3:0] = vga_out[7:4];
-	assign pmod_b[7:4] = vga_out[3:0];
-	assign pmod_a[4] = vga_hs;
-	assign pmod_a[5] = vga_vs;
+	assign jc[3:0] = vga_out[11:8];
+	assign jd[3:0] = vga_out[7:4];
+	assign jc[7:4] = vga_out[3:0];
+	assign jd[4] = vga_hs;
+	assign jd[5] = vga_vs;
 	
 	assign hc = center[15:0];
 	assign vc = center[31:16];
