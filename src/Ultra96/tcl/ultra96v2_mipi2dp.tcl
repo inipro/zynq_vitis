@@ -127,16 +127,16 @@ if { $bCheckIPs == 1 } {
 xilinx.com:ip:smartconnect:1.0\
 xilinx.com:ip:axi_vdma:6.3\
 xilinx.com:ip:clk_wiz:6.0\
-xilinx.com:ip:mipi_csi2_rx_subsystem:4.1\
+xilinx.com:ip:mipi_csi2_rx_subsystem:5.2\
 xilinx.com:ip:proc_sys_reset:5.0\
 xilinx.com:ip:system_ila:1.1\
 xilinx.com:ip:v_axi4s_vid_out:4.0\
-xilinx.com:ip:v_demosaic:1.0\
-xilinx.com:ip:v_gamma_lut:1.0\
+xilinx.com:ip:v_demosaic:1.1\
+xilinx.com:ip:v_gamma_lut:1.1\
 xilinx.com:ip:v_tc:6.2\
-xilinx.com:ip:v_tpg:8.0\
+xilinx.com:ip:v_tpg:8.2\
 xilinx.com:ip:xlconstant:1.1\
-xilinx.com:ip:zynq_ultra_ps_e:3.3\
+xilinx.com:ip:zynq_ultra_ps_e:3.4\
 "
 
    set list_ips_missing ""
@@ -258,7 +258,7 @@ proc create_root_design { parentCell } {
  ] $clk_wiz_1
 
   # Create instance: mipi_csi2_rx_subsyst_0, and set properties
-  set mipi_csi2_rx_subsyst_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mipi_csi2_rx_subsystem:4.1 mipi_csi2_rx_subsyst_0 ]
+  set mipi_csi2_rx_subsyst_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mipi_csi2_rx_subsystem:5.2 mipi_csi2_rx_subsyst_0 ]
   set_property -dict [ list \
    CONFIG.AXIS_TDEST_WIDTH {4} \
    CONFIG.CLK_LANE_IO_LOC {T3} \
@@ -318,7 +318,7 @@ proc create_root_design { parentCell } {
  ] $v_axi4s_vid_out_0
 
   # Create instance: v_demosaic_0, and set properties
-  set v_demosaic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_demosaic:1.0 v_demosaic_0 ]
+  set v_demosaic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_demosaic:1.1 v_demosaic_0 ]
   set_property -dict [ list \
    CONFIG.MAX_COLS {1920} \
    CONFIG.MAX_DATA_WIDTH {10} \
@@ -327,7 +327,7 @@ proc create_root_design { parentCell } {
  ] $v_demosaic_0
 
   # Create instance: v_gamma_lut_0, and set properties
-  set v_gamma_lut_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_gamma_lut:1.0 v_gamma_lut_0 ]
+  set v_gamma_lut_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_gamma_lut:1.1 v_gamma_lut_0 ]
   set_property -dict [ list \
    CONFIG.MAX_COLS {1920} \
    CONFIG.MAX_DATA_WIDTH {10} \
@@ -361,7 +361,7 @@ proc create_root_design { parentCell } {
  ] $v_tc_0
 
   # Create instance: v_tpg_0, and set properties
-  set v_tpg_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:8.0 v_tpg_0 ]
+  set v_tpg_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_tpg:8.2 v_tpg_0 ]
   set_property -dict [ list \
    CONFIG.DISPLAY_PORT {1} \
    CONFIG.FOREGROUND {0} \
@@ -376,7 +376,7 @@ proc create_root_design { parentCell } {
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
 
   # Create instance: zynq_ultra_ps_e_0, and set properties
-  set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.3 zynq_ultra_ps_e_0 ]
+  set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.4 zynq_ultra_ps_e_0 ]
   set_property -dict [ list \
    CONFIG.CAN0_BOARD_INTERFACE {custom} \
    CONFIG.CAN1_BOARD_INTERFACE {custom} \

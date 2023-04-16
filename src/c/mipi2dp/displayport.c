@@ -48,6 +48,8 @@ int displayport_init() {
 	XAVBuf avbuf;
 	XDpDma_Config *dpdma_config;
 
+	memset(&avbuf, 0, sizeof(XAVBuf)); // XAVBuf_CfgInitialize does not properly initialize
+
 	if ( (dppsu_config = XDpPsu_LookupConfig(XPAR_PSU_DP_DEVICE_ID)) == NULL) {
 		xil_printf("XDpPsu_LookupConfig() failed\r\n");
 		return XST_FAILURE;

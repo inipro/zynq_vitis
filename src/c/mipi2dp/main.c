@@ -54,7 +54,7 @@ int main() {
 	gamma_lut_init();
 	demosaic_init();
 	mipi_init();
-//	imx219_init();
+	//	imx219_init();
 	ov5640_init();
 
 	xil_printf("Entire video pipeline activated\r\n");
