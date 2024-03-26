@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2022.2
+set scripts_vivado_version 2023.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -127,7 +127,7 @@ if { $bCheckIPs == 1 } {
 xilinx.com:ip:smartconnect:1.0\
 xilinx.com:ip:axi_vdma:6.3\
 xilinx.com:ip:clk_wiz:6.0\
-xilinx.com:ip:mipi_csi2_rx_subsystem:5.2\
+xilinx.com:ip:mipi_csi2_rx_subsystem:5.4\
 xilinx.com:ip:proc_sys_reset:5.0\
 xilinx.com:ip:system_ila:1.1\
 xilinx.com:ip:v_axi4s_vid_out:4.0\
@@ -136,7 +136,7 @@ xilinx.com:ip:v_gamma_lut:1.1\
 xilinx.com:ip:v_tc:6.2\
 xilinx.com:ip:v_tpg:8.2\
 xilinx.com:ip:xlconstant:1.1\
-xilinx.com:ip:zynq_ultra_ps_e:3.4\
+xilinx.com:ip:zynq_ultra_ps_e:3.5\
 "
 
    set list_ips_missing ""
@@ -258,7 +258,7 @@ proc create_root_design { parentCell } {
  ] $clk_wiz_1
 
   # Create instance: mipi_csi2_rx_subsyst_0, and set properties
-  set mipi_csi2_rx_subsyst_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mipi_csi2_rx_subsystem:5.2 mipi_csi2_rx_subsyst_0 ]
+  set mipi_csi2_rx_subsyst_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mipi_csi2_rx_subsystem:5.4 mipi_csi2_rx_subsyst_0 ]
   set_property -dict [ list \
    CONFIG.AXIS_TDEST_WIDTH {4} \
    CONFIG.CLK_LANE_IO_LOC {T3} \
@@ -376,7 +376,7 @@ proc create_root_design { parentCell } {
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
 
   # Create instance: zynq_ultra_ps_e_0, and set properties
-  set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.4 zynq_ultra_ps_e_0 ]
+  set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.5 zynq_ultra_ps_e_0 ]
   set_property -dict [ list \
    CONFIG.CAN0_BOARD_INTERFACE {custom} \
    CONFIG.CAN1_BOARD_INTERFACE {custom} \
